@@ -66,19 +66,17 @@ Currently working as a **Senior Associate Transformation Consultant (Cloud & Pla
 
 ## 🏅 Certifications
 
-- 🟡 **Google Cloud Professional Cloud Architect** (2025)
-- 🔵 **Google Cloud Digital Leader** (2025)
-- 🔵 **Google Cloud Networking Pre-sales Technical Expert Badge** (2025)
-- 🟠 **AWS Certified Cloud Practitioner** (2024)
-- 🟠 **AWS re/Start Graduate** (2024)
+- 🟡 **[Google Cloud Professional Cloud Architect](https://www.credly.com/badges/49204324-a5c1-4207-987c-3d11c33fa285)** (2025)
+- 🔵 **[Google Cloud Digital Leader](https://www.credly.com/badges/b8f28172-e641-4e20-bc64-a2440b1481e6)** (2025)
+- 🔵 **[Google Cloud Networking Pre-sales Technical Expert Badge](https://www.credly.com/badges/c37292b0-8a49-45b6-84d6-fc543fc66139)** (2025)
+- 🟠 **[AWS Certified Cloud Practitioner](https://www.credly.com/badges/23e599c2-9c46-427d-9068-a102b80568d3/public_url)** (2024)
+- 🟠 **[AWS re/Start Graduate](https://www.credly.com/badges/ebf15142-51b5-40b8-9b00-5ce6a6531d12/linked_in_profile)** (2024)
 
 ---
 
 ## 📊 GitHub Stats
 
 <p align="center">
-  <!-- <img src="https://github-readme-stats.vercel.app/api?username=RathomBoii&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=86400" height="160"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RathomBoii&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=86400" height="160"/> -->
   <img src="github-metrics.svg" alt="GitHub Stats"/>
 </p>
 
