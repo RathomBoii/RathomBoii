@@ -1,16 +1,27 @@
-# .github/workflows/update-stats.yml
-name: Update GitHub Stats
+name: Generate GitHub Metrics
+
 on:
   schedule:
-    - cron: '0 0 * * *'  # ทุกวัน
-  workflow_dispatch:
+    - cron: '0 0 * * *'   # everyday on midnight UTC
+  workflow_dispatch:       # make it able to be run manaully
 
 jobs:
-  update-readme:
+  metrics:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: github-metrics.svg
+
+          # ── Core config ──────────────────────────
+          user: RathomBoii
+          template: classic
           base: header, activity, community, repositories
+
+          # ── Visual ───────────────────────────────
+          config_timezone: Asia/Bangkok
+          config_display: large
