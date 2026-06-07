@@ -1,0 +1,16 @@
+# .github/workflows/update-stats.yml
+name: Update GitHub Stats
+on:
+  schedule:
+    - cron: '0 0 * * *'  # ทุกวัน
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: github-metrics.svg
+          base: header, activity, community, repositories
