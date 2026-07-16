@@ -42,7 +42,7 @@ Currently working as a **Senior Associate Transformation Consultant (Cloud & Pla
 
 ## ⭐ Featured Project
 
-### 🏗️ [technical-refresh](https://github.com/RathomBoii/technical-refresh)
+### 🏗️ [eks-gitops-iac-app-showcase](https://github.com/RathomBoii/eks-gitops-iac-app-showcase.git)
 
 > A production-grade personal DevOps lab on AWS — built to sharpen platform engineering skills end-to-end.
 
