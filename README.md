@@ -80,6 +80,29 @@ Currently working as a **Senior Associate Transformation Consultant (Cloud & Pla
   <img src="github-metrics.svg" alt="GitHub Stats"/>
 </p>
 
+### Metrics workflow authentication
+
+The workflow in `.github/workflows/update-stats.yaml` requires a personal access
+token stored as the repository Actions secret `METRICS_TOKEN`. GitHub returning
+`401 Bad credentials` means that credential is invalid; the logs cannot distinguish
+an expired or revoked token from an incorrectly saved value.
+
+To restore updates:
+
+1. Create a new personal access token (classic) in **Settings → Developer settings →
+   Personal access tokens**. For the current public-profile configuration, no
+   additional scopes are required. See the [Metrics setup guide](https://github.com/lowlighter/metrics/blob/master/.github/readme/partials/documentation/setup/action.md).
+2. In this repository, open **Settings → Secrets and variables → Actions** and
+   replace `METRICS_TOKEN` with the new token value. Never put the token in a file.
+3. Run **Actions → Generate GitHub Metrics → Run workflow** and confirm that
+   `github-metrics.svg` updates. Renew the secret before the token expires.
+
+Do not substitute `GITHUB_TOKEN` for `METRICS_TOKEN`: Metrics requires a personal
+token to read account-wide data. The action already uses the automatically
+generated `github.token` to commit the SVG, with `contents: write` permission.
+The early validation step reports missing or rejected credentials before the
+Metrics action starts; it does not renew the secret automatically.
+
 ---
 
 <p align="center">
