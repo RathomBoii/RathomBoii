@@ -12,6 +12,28 @@ jobs:
       contents: write
 
     steps:
+      - name: Validate Metrics token
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          if [ -z "$METRICS_TOKEN" ]; then
+            echo "::error::METRICS_TOKEN is missing. Add a personal access token in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+          status=$(curl --silent --show-error --max-time 30 \
+            --output /dev/null --write-out '%{http_code}' \
+            --oauth2-bearer "$METRICS_TOKEN" \
+            https://api.github.com/user)
+
+          if [ "$status" = "401" ]; then
+            echo "::error::METRICS_TOKEN is invalid or expired/revoked. Replace the repository secret with a valid personal access token (see README.md)."
+            exit 1
+          elif [ "$status" != "200" ]; then
+            echo "::error::Unable to validate METRICS_TOKEN (HTTP $status). Check GitHub API availability and token access."
+            exit 1
+          fi
+
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
